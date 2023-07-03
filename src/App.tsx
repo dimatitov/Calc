@@ -1,28 +1,29 @@
 import React from 'react';
 import styles from './App.module.scss';
-import logo from './logo.svg';
+import { Button } from './components/Button';
 
 function App() {
   return (
-    <div className={styles.App}>
-      <header className={styles.AppHeader}>
-        <img
-          src={logo}
-          className={styles.AppLogo}
-          alt='logo'
-        />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className={styles.AppLink}
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.wrapper}>
+      <div className={styles.calcBody}>
+        <div className={styles.gridContainer}>
+          <div className={styles.resultArea}>
+            <div className={styles.resultAreaCalculated}>0</div>
+            <div className={styles.resultAreaResult}>0</div>
+          </div>
+          <div className={styles.line} />
+          <div className={styles.gridContainerBtn}>
+            {Array(20)
+              .fill('')
+              .map((_, index) => (
+                <Button
+                  value={'0'}
+                  key={index}
+                />
+              ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
