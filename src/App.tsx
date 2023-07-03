@@ -5,23 +5,23 @@ import { Button } from './components/Button';
 function App() {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.calcBody}>
-        <div className={styles.gridContainer}>
-          <div className={styles.resultArea}>
-            <div className={styles.resultAreaCalculated}>0</div>
-            <div className={styles.resultAreaResult}>0</div>
-          </div>
-          <div className={styles.line} />
-          <div className={styles.gridContainerBtn}>
-            {Array(20)
-              .fill('')
-              .map((_, index) => (
-                <Button
-                  key={index}
-                  value={'0'}
-                />
-              ))}
-          </div>
+      <div className={styles.calculator}>
+        <div className={styles.resultArea}>
+          <div className={styles.calculated}>0</div>
+          <div className={styles.result}>0</div>
+        </div>
+
+        <div className={styles.line} />
+
+        <div className={styles.calculatorButtons}>
+          {Array(20)
+            .fill('')
+            .map((_, index) => (
+              <Button
+                key={index}
+                value={'0'}
+              />
+            ))}
         </div>
       </div>
     </div>
