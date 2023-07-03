@@ -17,8 +17,8 @@ function App() {
               .fill('')
               .map((_, index) => (
                 <Button
-                  value={'0'}
                   key={index}
+                  value={'0'}
                 />
               ))}
           </div>
