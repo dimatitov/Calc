@@ -125,5 +125,6 @@ export class Calculate implements ICalculate {
 
   private setValue = (value: string) => {
     this.result = value;
+    console.log('this.result', this.result);
   };
 }

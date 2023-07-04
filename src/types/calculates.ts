@@ -1,12 +1,12 @@
-import { ButtonSize, NUMBERS, SYMBOL } from '@src/constants';
+import { ButtonSize, NUMBERS, SYMBOL } from 'src/constants';
 
 export type GetButtonsMap = () => ButtonsMapType;
 export type ButtonsType = SYMBOL & NUMBERS;
-type ButtonsMapType = {
+export type ButtonsMapType = {
   [key in ButtonsType]: IButtonMap;
 };
 
-interface IButtonMap {
+export interface IButtonMap {
   key: ButtonsType;
   title: ButtonsType;
   handler: () => void;
