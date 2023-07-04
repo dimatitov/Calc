@@ -1,27 +1,31 @@
 import React from 'react';
+import { Button } from 'src/components/Button';
+import { Calculate } from 'src/models/calculate';
+import { initalizer } from 'src/models/initalizer';
 import styles from './App.module.scss';
-import { Button } from './components/Button';
 
 function App() {
+  const { result, getButtonsMap } = initalizer<Calculate>(Calculate);
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.calculator}>
         <div className={styles.resultArea}>
-          <div className={styles.calculated}>0</div>
-          <div className={styles.result}>0</div>
+          <div className={styles.calculated}>{result}</div>
+          <div className={styles.result}>{result}</div>
         </div>
 
         <div className={styles.line} />
 
         <div className={styles.calculatorButtons}>
-          {Array(20)
-            .fill('')
-            .map((_, index) => (
-              <Button
-                key={index}
-                value={'0'}
-              />
-            ))}
+          {Object.values(getButtonsMap()).map((button) => (
+            <Button
+              key={button.key}
+              title={button.title}
+              handleClick={button.handler}
+              size={button.size}
+            />
+          ))}
         </div>
       </div>
     </div>

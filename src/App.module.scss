@@ -13,6 +13,8 @@
   display: grid;
   grid-template-rows: 1fr 2px 3fr;
   grid-row-gap: 18px;
+  max-width: 360px;
+  width: 100%;
 }
 
 .line {
@@ -20,10 +22,10 @@
 }
 
 .calculatorButtons {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  grid-column-gap: 40px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  grid-column-gap: 20px;
   grid-row-gap: 16px;
 }
 
